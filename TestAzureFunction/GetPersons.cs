@@ -26,16 +26,16 @@ namespace TestAzureFunction
             ILogger log)
         {
             var functionApiKey = Environment.GetEnvironmentVariable("API_KEY");
-
-            // TODO: Need to validate the request body
-            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            var simpleRequest = JsonConvert.DeserializeObject<SimpleRequest>(requestBody);
-
             var apiKey = req.Headers["api-key"];
+
             log.LogInformation($"API Key in Env: {functionApiKey}");
             log.LogInformation($"API Key in Header: {apiKey}");
             if (apiKey != functionApiKey)
                 return new UnauthorizedResult();
+
+            // TODO: Need to validate the request body
+            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var simpleRequest = JsonConvert.DeserializeObject<SimpleRequest>(requestBody);
 
             var simpleResponse = new SimpleResponse();
 
