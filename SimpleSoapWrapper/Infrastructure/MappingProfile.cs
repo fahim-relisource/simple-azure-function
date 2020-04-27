@@ -6,7 +6,7 @@ using AutoMapper;
 using SimpleSoapWrapper.Model;
 using SoapDemoService;
 
-namespace SimpleSoapWrapper
+namespace SimpleSoapWrapper.Infrastructure
 {
     public class MappingProfile : Profile
     {

@@ -8,6 +8,9 @@ namespace SimpleSoapWrapper.Model.Response
         public bool Success = true;
 
         [JsonProperty(propertyName: "message")]
-        public string Message = "";
+        public object Message = "";
+
+        [JsonProperty(propertyName: "data")]
+        public object Data;
     }
 }

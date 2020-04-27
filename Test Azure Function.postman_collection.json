@@ -11,14 +11,14 @@
 				"method": "POST",
 				"header": [
 					{
-						"key": "api-key",
+						"key": "x-functions-key",
 						"value": "5398a7fd-59c1-4937-8816-bfd32eafba37",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"find-person\": true,\n\t\"find-address\": true,\n\t\"find-all-person\": true,\n\t\"zip-code\": \"01730\"\n}",
+					"raw": "{\n\t\"person-id\": 96\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -26,7 +26,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:7071/api/GetPersons",
+					"raw": "http://localhost:7071/api/find-person",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -34,7 +34,7 @@
 					"port": "7071",
 					"path": [
 						"api",
-						"GetPersons"
+						"find-person"
 					]
 				}
 			},

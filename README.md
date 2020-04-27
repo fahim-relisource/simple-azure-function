@@ -1,10 +1,11 @@
 # Simple Azure Function with SOAP Web Service
 
-This repo showcase Soap Web Service consumption from Azure Function.
+This repo showcase Soap Web Service consumption, Dependency Injection, Object Mapping and Request Body validation on Azure Function.
 
 #### Dependencies:
 
 * AutoMapper
+* FluentValidation
 
 #### How can run this
 
@@ -18,12 +19,11 @@ Please add `local.settings.json` on `TestAzureFunction` project which will look 
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "API_KEY": "5398a7fd-59c1-4937-8816-bfd32eafba37"
   }
 }
 ```
-
-This `API_KEY` I just randomly generated. Its not any real `API` key.
+To use this function on production you have to add `x-functions-key` on header. `x-functions-key` is needed when the authorization label of the Function is `Function`.
+[Please check this section to find more](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp#api-key-authorization)
 
 I also add `Postman Collection` to test it. On post man you will find the `Headers` and `Body` for the request.
 
